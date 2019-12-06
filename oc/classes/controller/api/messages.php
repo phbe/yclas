@@ -16,7 +16,7 @@ class Controller_Api_Messages extends Api_User {
         }
         else
         {
-            $messages = Model_Message::get_threads($this->user, (isset($this->_filter_params['status'])?$this->_filter_params['status']:NULL));
+            $messages = Model_Message::get_threads($this->user, (isset($this->_filter_params['status'])?$this->_filter_params['status']['value']:NULL));
 
             //filter results by param, verify field exists and has a value
             $messages->api_filter($this->_filter_params);
